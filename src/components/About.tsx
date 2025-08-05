@@ -1,27 +1,30 @@
 import { Building2, Globe2, Zap, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+  
   const features = [
     {
       icon: Building2,
-      title: "Holding Company",
-      description: "Struktur perusahaan holding yang mengelola berbagai anak perusahaan di bidang teknologi dan perdagangan."
+      title: t('about.feature.holding.title'),
+      description: t('about.feature.holding.desc')
     },
     {
       icon: Globe2,
-      title: "Ekspor Impor",
-      description: "Jaringan perdagangan internasional yang luas dengan fokus pada komoditas teknologi dan produk digital."
+      title: t('about.feature.trade.title'),
+      description: t('about.feature.trade.desc')
     },
     {
       icon: Zap,
-      title: "Teknologi Informasi",
-      description: "Solusi teknologi terdepan meliputi web hosting, aplikasi builder, dan platform digital inovatif."
+      title: t('about.feature.tech.title'),
+      description: t('about.feature.tech.desc')
     },
     {
       icon: Users,
-      title: "Social Media",
-      description: "Platform media sosial yang menghubungkan komunitas global dengan teknologi canggih."
+      title: t('about.feature.social.title'),
+      description: t('about.feature.social.desc')
     }
   ];
 
@@ -30,12 +33,10 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-accent-gradient">Tentang</span> TechHolding Group
+            {t('about.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Kami adalah perusahaan holding yang berfokus pada inovasi teknologi informasi dan 
-            perdagangan internasional. Dengan pengalaman lebih dari satu dekade, kami telah 
-            membangun ekosistem digital yang terintegrasi dan berkelanjutan.
+            {t('about.description')}
           </p>
         </div>
 
@@ -59,22 +60,21 @@ const About = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
-            <h3 className="text-3xl font-bold mb-6 text-gradient">Visi & Misi</h3>
+            <h3 className="text-3xl font-bold mb-6 text-gradient">{t('about.vision.title')}</h3>
             <div className="space-y-6">
               <div>
-                <h4 className="text-xl font-semibold mb-3 text-accent">Visi</h4>
+                <h4 className="text-xl font-semibold mb-3 text-accent">{t('about.vision.label')}</h4>
                 <p className="text-muted-foreground leading-relaxed">
-                  Menjadi perusahaan holding teknologi terdepan di Asia Tenggara yang 
-                  menghubungkan inovasi digital dengan peluang bisnis global.
+                  {t('about.vision.text')}
                 </p>
               </div>
               <div>
-                <h4 className="text-xl font-semibold mb-3 text-accent">Misi</h4>
+                <h4 className="text-xl font-semibold mb-3 text-accent">{t('about.mission.label')}</h4>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• Mengembangkan ekosistem digital yang terintegrasi</li>
-                  <li>• Memfasilitasi perdagangan internasional melalui teknologi</li>
-                  <li>• Menciptakan platform inovatif untuk pertumbuhan bisnis</li>
-                  <li>• Membangun komunitas digital yang berkelanjutan</li>
+                  <li>{t('about.mission.1')}</li>
+                  <li>{t('about.mission.2')}</li>
+                  <li>{t('about.mission.3')}</li>
+                  <li>{t('about.mission.4')}</li>
                 </ul>
               </div>
             </div>
@@ -82,23 +82,23 @@ const About = () => {
 
           <div className="animate-scale-in">
             <div className="card-gradient p-8 rounded-lg border border-border/50">
-              <h4 className="text-2xl font-bold mb-6 text-center text-gradient">Nilai Perusahaan</h4>
+              <h4 className="text-2xl font-bold mb-6 text-center text-gradient">{t('about.values.title')}</h4>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">Inovasi</div>
-                  <p className="text-sm text-muted-foreground">Selalu di garis depan teknologi</p>
+                  <div className="text-3xl font-bold text-primary mb-2">{t('about.values.innovation')}</div>
+                  <p className="text-sm text-muted-foreground">{t('about.values.innovation.desc')}</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-accent mb-2">Integritas</div>
-                  <p className="text-sm text-muted-foreground">Transparansi dalam setiap langkah</p>
+                  <div className="text-3xl font-bold text-accent mb-2">{t('about.values.integrity')}</div>
+                  <p className="text-sm text-muted-foreground">{t('about.values.integrity.desc')}</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-success mb-2">Kolaborasi</div>
-                  <p className="text-sm text-muted-foreground">Kekuatan dalam kemitraan</p>
+                  <div className="text-3xl font-bold text-success mb-2">{t('about.values.collaboration')}</div>
+                  <p className="text-sm text-muted-foreground">{t('about.values.collaboration.desc')}</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-glow mb-2">Excelence</div>
-                  <p className="text-sm text-muted-foreground">Standar kualitas tertinggi</p>
+                  <div className="text-3xl font-bold text-primary-glow mb-2">{t('about.values.excellence')}</div>
+                  <p className="text-sm text-muted-foreground">{t('about.values.excellence.desc')}</p>
                 </div>
               </div>
             </div>

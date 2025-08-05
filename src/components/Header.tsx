@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 import companyLogo from "@/assets/company-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navItems = [
-    { name: "Beranda", href: "#home" },
-    { name: "Tentang", href: "#about" },
-    { name: "Portofolio", href: "#portfolio" },
-    { name: "Kontak", href: "#contact" },
+    { name: t('nav.home'), href: "#home" },
+    { name: t('nav.about'), href: "#about" },
+    { name: t('nav.portfolio'), href: "#portfolio" },
+    { name: t('nav.contact'), href: "#contact" },
   ];
 
   return (
@@ -30,7 +33,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -41,19 +44,23 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
+            <LanguageToggle />
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+          {/* Mobile Menu Button and Language Toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle />
+            <button
+              className="p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}

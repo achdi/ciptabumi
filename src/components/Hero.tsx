@@ -1,8 +1,10 @@
 import { ArrowRight, Globe, Code, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
+  const { t } = useLanguage();
   return (
     <section 
       id="home" 
@@ -36,8 +38,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Perusahaan holding terdepan di bidang teknologi informasi dan perdagangan internasional. 
-            Menghubungkan inovasi digital dengan peluang global.
+            {t('hero.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -45,7 +46,7 @@ const Hero = () => {
               size="lg" 
               className="primary-gradient hover:scale-105 transition-transform duration-300 glow-shadow group"
             >
-              Jelajahi Portofolio
+              {t('hero.cta.portfolio')}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
@@ -54,7 +55,7 @@ const Hero = () => {
               size="lg"
               className="border-primary/50 hover:bg-primary/10 hover:scale-105 transition-all duration-300"
             >
-              Hubungi Kami
+              {t('hero.cta.contact')}
             </Button>
           </div>
         </div>
@@ -63,19 +64,19 @@ const Hero = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-scale-in">
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-2">5+</div>
-            <div className="text-muted-foreground">Platform Digital</div>
+            <div className="text-muted-foreground">{t('hero.stats.platforms')}</div>
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-accent mb-2">100+</div>
-            <div className="text-muted-foreground">Klien Aktif</div>
+            <div className="text-muted-foreground">{t('hero.stats.clients')}</div>
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-success mb-2">24/7</div>
-            <div className="text-muted-foreground">Support</div>
+            <div className="text-muted-foreground">{t('hero.stats.support')}</div>
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-primary-glow mb-2">10+</div>
-            <div className="text-muted-foreground">Negara</div>
+            <div className="text-muted-foreground">{t('hero.stats.countries')}</div>
           </div>
         </div>
       </div>
