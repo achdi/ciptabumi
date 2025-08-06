@@ -33,7 +33,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: t('contact.info.address'),
-      info: "JBintaro, Jakarta, Indonesia",
+      info: "Bintaro, Jakarta, Indonesia",
       link: "#"
     }
   ];
