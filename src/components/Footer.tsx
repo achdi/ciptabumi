@@ -28,7 +28,7 @@ const Footer = () => {
                 className="h-10 w-10 rounded-lg"
               />
               <div className="text-xl font-bold text-gradient">
-                Ciptabumi for Technogy Holding Group
+                Ciptabumi for Technology Holding Group
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
