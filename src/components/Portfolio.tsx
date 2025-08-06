@@ -40,8 +40,7 @@ const Portfolio = () => {
       color: "text-green-500",
       bgColor: "bg-green-500/20"
     },
-    {
-      name: "UnderSystem",
+    {  name: "UnderSystem",
       url: "www.undersystem.net",
       icon: Shield,
       description: "Solusi sistem keamanan dan infrastruktur teknologi untuk enterprise dan bisnis skala besar.",
@@ -49,6 +48,7 @@ const Portfolio = () => {
       color: "text-orange-500",
       bgColor: "bg-orange-500/20"
     }
+    
   ];
 
   return (
