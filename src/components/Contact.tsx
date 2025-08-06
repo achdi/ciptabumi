@@ -12,8 +12,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: t('contact.info.email'),
-      info: "info@techholding.id",
-      link: "mailto:info@techholding.id"
+      info: "info@ciptabumi.com",
+      link: "mailto:info@ciptabumi.com"
     },
     {
       icon: Phone,
