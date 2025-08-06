@@ -59,7 +59,7 @@ const Portfolio = () => {
             <span className="text-gradient">Portofolio</span> Perusahaan
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Jaringan perusahaan kami mencakup berbagai sektor teknologi, dari platform perjalanan 
+            Jaringan sistem terkoneksi kami mencakup berbagai sektor teknologi, dari platform perjalanan 
             hingga media sosial dan layanan hosting enterprise.
           </p>
         </div>

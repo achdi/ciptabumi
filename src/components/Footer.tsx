@@ -42,7 +42,7 @@ const Footer = () => {
 
           {/* Our Companies */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Perusahaan Kami</h3>
+            <h3 className="text-lg font-semibold mb-4 text-foreground">Sistem Terkoneksi</h3>
             <ul className="space-y-3">
               {companies.map((company, index) => (
                 <li key={index}>
