@@ -69,7 +69,7 @@ const translations = {
     'contact.hours.weekdays': 'Senin - Jumat:',
     'contact.hours.weekdays.time': '08:00 - 17:00 WIB',
     'contact.hours.saturday': 'Sabtu:',
-    'contact.hours.saturday.time': '09:00 - 12:00 WIB',
+    'contact.hours.saturday.time': '09:00 - 15:00 WIB',
     'contact.hours.sunday': 'Minggu:',
     'contact.hours.sunday.time': 'Tutup',
     'contact.form.title': 'Kirim Pesan',
@@ -82,15 +82,6 @@ const translations = {
     'contact.form.message': 'Pesan',
     'contact.form.message.placeholder': 'Tulis pesan Anda di sini...',
     'contact.form.send': 'Kirim Pesan',
-    'contact.form.sending': 'Mengirim...',
-    
-    // Portfolio Section
-    'portfolio.title.main': 'Portofolio',
-    'portfolio.title.sub': 'Perusahaan',
-    'portfolio.subtitle': 'Jaringan perusahaan kami mencakup berbagai sektor teknologi, dari platform perjalanan hingga media sosial dan layanan hosting enterprise.',
-    'portfolio.visit': 'Kunjungi Website',
-    'portfolio.ecosystem.title': 'Ekosistem Terintegrasi',
-    'portfolio.ecosystem.description': 'Semua platform kami dirancang untuk saling terintegrasi, menciptakan ekosistem digital yang komprehensif untuk memenuhi berbagai kebutuhan bisnis modern.',
   },
   en: {
     // Header
@@ -149,7 +140,7 @@ const translations = {
     'contact.hours.weekdays': 'Monday - Friday:',
     'contact.hours.weekdays.time': '08:00 - 17:00 WIB',
     'contact.hours.saturday': 'Saturday:',
-    'contact.hours.saturday.time': '09:00 - 12:00 WIB',
+    'contact.hours.saturday.time': '09:00 - 15:00 WIB',
     'contact.hours.sunday': 'Sunday:',
     'contact.hours.sunday.time': 'Closed',
     'contact.form.title': 'Send Message',
@@ -162,15 +153,6 @@ const translations = {
     'contact.form.message': 'Message',
     'contact.form.message.placeholder': 'Write your message here...',
     'contact.form.send': 'Send Message',
-    'contact.form.sending': 'Sending...',
-    
-    // Portfolio Section
-    'portfolio.title.main': 'Portfolio',
-    'portfolio.title.sub': 'Companies',
-    'portfolio.subtitle': 'Our company network covers various technology sectors, from travel platforms to social media and enterprise hosting services.',
-    'portfolio.visit': 'Visit Website',
-    'portfolio.ecosystem.title': 'Integrated Ecosystem',
-    'portfolio.ecosystem.description': 'All our platforms are designed to be interconnected, creating a comprehensive digital ecosystem to meet various modern business needs.',
   }
 };
 
