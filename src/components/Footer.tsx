@@ -9,6 +9,7 @@ const Footer = () => {
     { name: "Coretan Digital", url: "www.coretan.digital" },
     { name: "MauBuat", url: "www.maubuat.com" },
     { name: "UnderSystem", url: "www.undersystem.net" }
+    { name: "Cargo system", url: "cargo.ciptabumi.com" }
   ];
 
   const scrollToTop = () => {

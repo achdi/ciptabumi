@@ -152,9 +152,15 @@ INSERT INTO public.companies (name, url, description_id, description_en, categor
    'Technology', 'Technology',
    'Shield', 'text-orange-500', 'bg-orange-500/20', 5);
 
+     ('Cargo system Management', 'cargo.ciptabumi',
+   'Solusi sistem integrasi dan infrastruktur teknologi untuk Cargo dan Logistic serta Supply chain Management.',
+   'Integrated systems and technology infrastructure solutions for Logistic, Supply chain Management and Cargo Freight Forwarder.',
+   'Freight forwarder', 'Technology', 'Logistic', 
+   'Shield', 'text-orange-500', 'bg-orange-500/20', 6);
+
 -- Insert default company stats
 INSERT INTO public.company_stats (label_id, label_en, value, color, sort_order) VALUES
-  ('Platform', 'Platforms', '5', 'text-primary', 1),
+  ('Platform', 'Platforms', '6', 'text-primary', 1),
   ('Uptime', 'Uptime', '99.9%', 'text-accent', 2),
   ('Users', 'Users', '1M+', 'text-success', 3),
   ('Support', 'Support', '24/7', 'text-primary-glow', 4);
