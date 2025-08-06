@@ -9,7 +9,6 @@ const Footer = () => {
     { name: "Coretan Digital", url: "www.coretan.digital" },
     { name: "MauBuat", url: "www.maubuat.com" },
     { name: "UnderSystem", url: "www.undersystem.net" }
-    { name: "Cargo System", url: "cargo.ciptabumi.com" }
   ];
 
   const scrollToTop = () => {
@@ -29,7 +28,7 @@ const Footer = () => {
                 className="h-10 w-10 rounded-lg"
               />
               <div className="text-xl font-bold text-gradient">
-                Ciptabumi Technology for Holding Group
+                TechHolding Group
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
@@ -37,7 +36,7 @@ const Footer = () => {
               internasional yang menghubungkan inovasi digital dengan peluang global.
             </p>
             <div className="text-sm text-muted-foreground">
-              © 2025 Ciptabumi Tech Group. All rights reserved.
+              © 2024 TechHolding Group. All rights reserved.
             </div>
           </div>
 
