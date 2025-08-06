@@ -20,7 +20,7 @@ const translations = {
     'nav.contact': 'Kontak',
     
     // Hero Section
-    'hero.title': 'TechHolding Group',
+    'hero.title': 'Ciptabumi Group',
     'hero.subtitle': 'Perusahaan holding terdepan di bidang teknologi informasi dan perdagangan internasional. Menghubungkan inovasi digital dengan peluang global.',
     'hero.cta.portfolio': 'Jelajahi Portofolio',
     'hero.cta.contact': 'Hubungi Kami',
@@ -30,7 +30,7 @@ const translations = {
     'hero.stats.countries': 'Negara',
     
     // About Section
-    'about.title': 'Tentang TechHolding Group',
+    'about.title': 'Tentang Ciptabumi Group',
     'about.description': 'Kami adalah perusahaan holding yang berfokus pada inovasi teknologi informasi dan perdagangan internasional. Dengan pengalaman lebih dari satu dekade, kami telah membangun ekosistem digital yang terintegrasi dan berkelanjutan.',
     'about.feature.holding.title': 'Holding Company',
     'about.feature.holding.desc': 'Struktur perusahaan holding yang mengelola berbagai anak perusahaan di bidang teknologi dan perdagangan.',
@@ -91,7 +91,7 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'TechHolding Group',
+    'hero.title': 'Ciptabumi Group',
     'hero.subtitle': 'Leading holding company in information technology and international trade. Connecting digital innovation with global opportunities.',
     'hero.cta.portfolio': 'Explore Portfolio',
     'hero.cta.contact': 'Contact Us',
@@ -101,7 +101,7 @@ const translations = {
     'hero.stats.countries': 'Countries',
     
     // About Section
-    'about.title': 'About TechHolding Group',
+    'about.title': 'About Ciptabumi Group',
     'about.description': 'We are a holding company focused on information technology innovation and international trade. With more than a decade of experience, we have built an integrated and sustainable digital ecosystem.',
     'about.feature.holding.title': 'Holding Company',
     'about.feature.holding.desc': 'Holding company structure that manages various subsidiaries in technology and trade sectors.',
