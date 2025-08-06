@@ -4,16 +4,25 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useContactForm } from "@/hooks/useContactForm";
+import { useState } from "react";
 
 const Contact = () => {
   const { t } = useLanguage();
+  const { submitContactForm, isSubmitting } = useContactForm();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
   
   const contactInfo = [
     {
       icon: Mail,
       title: t('contact.info.email'),
-      info: "info@techholding.id",
-      link: "mailto:info@techholding.id"
+      info: "info@ciptabumi.id",
+      link: "mailto:info@ciptabumi.id"
     },
     {
       icon: Phone,
@@ -28,6 +37,18 @@ const Contact = () => {
       link: "#"
     }
   ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const success = await submitContactForm(formData);
+    if (success) {
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    }
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
 
   return (
     <section id="contact" className="py-20 bg-secondary/30">
@@ -91,53 +112,71 @@ const Contact = () => {
               <CardTitle className="text-2xl font-bold text-gradient">{t('contact.form.title')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      {t('contact.form.name')}
+                    </label>
+                    <Input 
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      placeholder={t('contact.form.name.placeholder')}
+                      className="bg-background/50 border-border focus:border-primary"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      {t('contact.form.email')}
+                    </label>
+                    <Input 
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      placeholder={t('contact.form.email.placeholder')}
+                      className="bg-background/50 border-border focus:border-primary"
+                      required
+                    />
+                  </div>
+                </div>
+                
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">
-                    {t('contact.form.name')}
+                    {t('contact.form.subject')}
                   </label>
                   <Input 
-                    placeholder={t('contact.form.name.placeholder')}
+                    value={formData.subject}
+                    onChange={(e) => handleInputChange('subject', e.target.value)}
+                    placeholder={t('contact.form.subject.placeholder')}
                     className="bg-background/50 border-border focus:border-primary"
+                    required
                   />
                 </div>
+                
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">
-                    {t('contact.form.email')}
+                    {t('contact.form.message')}
                   </label>
-                  <Input 
-                    type="email"
-                    placeholder={t('contact.form.email.placeholder')}
-                    className="bg-background/50 border-border focus:border-primary"
+                  <Textarea 
+                    value={formData.message}
+                    onChange={(e) => handleInputChange('message', e.target.value)}
+                    placeholder={t('contact.form.message.placeholder')}
+                    rows={5}
+                    className="bg-background/50 border-border focus:border-primary resize-none"
+                    required
                   />
                 </div>
-              </div>
-              
-              <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">
-                  {t('contact.form.subject')}
-                </label>
-                <Input 
-                  placeholder={t('contact.form.subject.placeholder')}
-                  className="bg-background/50 border-border focus:border-primary"
-                />
-              </div>
-              
-              <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">
-                  {t('contact.form.message')}
-                </label>
-                <Textarea 
-                  placeholder={t('contact.form.message.placeholder')}
-                  rows={5}
-                  className="bg-background/50 border-border focus:border-primary resize-none"
-                />
-              </div>
-              
-              <Button className="w-full primary-gradient hover:scale-105 transition-transform duration-300 group">
-                {t('contact.form.send')}
-                <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
+                
+                <Button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full primary-gradient hover:scale-105 transition-transform duration-300 group disabled:opacity-50"
+                >
+                  {isSubmitting ? t('contact.form.sending') : t('contact.form.send')}
+                  <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </div>
