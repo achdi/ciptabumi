@@ -21,8 +21,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: t('contact.info.email'),
-      info: "info@ciptabumi.id",
-      link: "mailto:info@ciptabumi.id"
+      info: "info@ciptabumi.com",
+      link: "mailto:info@ciptabumi.com"
     },
     {
       icon: Phone,
@@ -33,7 +33,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: t('contact.info.address'),
-      info: "Jakarta, Indonesia",
+      info: "JBintaro, Jakarta, Indonesia",
       link: "#"
     }
   ];
