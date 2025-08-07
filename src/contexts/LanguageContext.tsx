@@ -124,6 +124,11 @@ const translations = {
     'investor.form.success.desc': 'Tim kami akan menghubungi Anda dalam 24 jam.',
     'investor.contact.title': 'Kontak Investor Relations',
     'investor.contact.subtitle': 'Tim profesional kami siap membantu kebutuhan investasi Anda.',
+    'investor.flipbook.title': 'Portfolio Digital Interaktif',
+    'investor.flipbook.subtitle': 'Jelajahi komprehensif portofolio perusahaan kami melalui buku digital interaktif yang menampilkan prestasi, inovasi, dan rencana strategis masa depan.',
+    'investor.flipbook.card.title': 'Buku Portfolio Ciptabumi Group',
+    'investor.flipbook.card.desc': 'Akses mudah ke informasi lengkap tentang semua platform dan pencapaian kami',
+    'investor.flipbook.open': 'Buka Flipbook',
   },
   en: {
     // Header
@@ -237,6 +242,11 @@ const translations = {
     'investor.form.success.desc': 'Our team will contact you within 24 hours.',
     'investor.contact.title': 'Investor Relations Contact',
     'investor.contact.subtitle': 'Our professional team is ready to assist with your investment needs.',
+    'investor.flipbook.title': 'Interactive Digital Portfolio',
+    'investor.flipbook.subtitle': 'Explore our comprehensive company portfolio through an interactive digital book showcasing our achievements, innovations, and future strategic plans.',
+    'investor.flipbook.card.title': 'Ciptabumi Group Portfolio Book',
+    'investor.flipbook.card.desc': 'Easy access to complete information about all our platforms and achievements',
+    'investor.flipbook.open': 'Open Flipbook',
   }
 };
 

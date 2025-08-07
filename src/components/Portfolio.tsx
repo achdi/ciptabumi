@@ -74,43 +74,46 @@ const Portfolio = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {companies.map((company, index) => (
-            <Card 
-              key={index}
-              className="card-gradient border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 group animate-scale-in h-full"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`p-3 rounded-full ${company.bgColor} group-hover:scale-110 transition-transform`}>
-                    <company.icon className={`h-6 w-6 ${company.color}`} />
-                  </div>
-                  <span className="text-sm px-3 py-1 rounded-full bg-muted text-muted-foreground">
-                    {company.category}
-                  </span>
-                </div>
-                <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                  {company.name}
-                </CardTitle>
-                <p className="text-sm text-primary font-medium">{company.url}</p>
-              </CardHeader>
-              
-              <CardContent className="pt-0 flex flex-col justify-between flex-1">
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  {company.description}
-                </p>
-                
-                <Button 
-                  variant="outline" 
-                  className="w-full border-primary/50 hover:bg-primary/10 group-hover:border-primary transition-all"
-                  onClick={() => window.open(`https://${company.url}`, '_blank')}
-                >
-                  Kunjungi Website
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+          {companies.map((company, index) => {
+            const isGoldFrame = index % 2 === 0;
+            const frameClass = isGoldFrame ? 'gold-frame' : 'silver-frame';
+            
+            return (
+              <div key={index} className={`${frameClass} animate-scale-in`} style={{ animationDelay: `${index * 0.1}s` }}>
+                <Card className="card-gradient border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 group h-full">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`p-3 rounded-full ${company.bgColor} group-hover:scale-110 transition-transform`}>
+                        <company.icon className={`h-6 w-6 ${company.color}`} />
+                      </div>
+                      <span className="text-sm px-3 py-1 rounded-full bg-muted text-muted-foreground">
+                        {company.category}
+                      </span>
+                    </div>
+                    <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      {company.name}
+                    </CardTitle>
+                    <p className="text-sm text-primary font-medium">{company.url}</p>
+                  </CardHeader>
+                  
+                  <CardContent className="pt-0 flex flex-col justify-between flex-1">
+                    <p className="text-muted-foreground leading-relaxed mb-6">
+                      {company.description}
+                    </p>
+                    
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-primary/50 hover:bg-primary/10 group-hover:border-primary transition-all"
+                      onClick={() => window.open(`https://${company.url}`, '_blank')}
+                    >
+                      Kunjungi Website
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            );
+          })}
         </div>
 
         <div className="text-center mt-16 animate-fade-up">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, TrendingUp, Users, Globe, Shield, Mail, Phone, MapPin, Building, Target, Award } from "lucide-react";
+import { ArrowLeft, TrendingUp, Users, Globe, Shield, Mail, Phone, MapPin, Building, Target, Award, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -255,6 +255,54 @@ const Investor = () => {
                       {t('investor.form.send')}
                     </Button>
                   </form>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Flipbook */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-gradient">{t('investor.flipbook.title')}</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              {t('investor.flipbook.subtitle')}
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="silver-frame animate-scale-in">
+              <Card className="card-gradient border-border/50 overflow-hidden">
+                <CardHeader className="text-center">
+                  <div className="p-4 rounded-full bg-primary/20 w-fit mx-auto mb-4">
+                    <BookOpen className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl">{t('investor.flipbook.card.title')}</CardTitle>
+                  <p className="text-muted-foreground">{t('investor.flipbook.card.desc')}</p>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <div className="relative w-full h-[600px] bg-background rounded-t-lg overflow-hidden">
+                    <iframe
+                      src="https://online.fliphtml5.com/yhwoi/fnec/"
+                      className="w-full h-full border-0"
+                      title="Company Portfolio Flipbook"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div className="p-6 text-center bg-gradient-to-r from-muted/50 to-background">
+                    <Button 
+                      variant="outline" 
+                      className="border-primary/50 hover:bg-primary/10"
+                      onClick={() => window.open('https://online.fliphtml5.com/yhwoi/fnec/', '_blank')}
+                    >
+                      {t('investor.flipbook.open')}
+                      <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>

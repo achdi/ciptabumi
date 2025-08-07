@@ -46,6 +46,10 @@ All colors MUST be HSL.
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(240 3.7% 15.9% / 0.8), hsl(240 3.7% 15.9% / 0.4));
+    
+    /* Premium frame gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 51%) 0%, hsl(43 100% 68%) 25%, hsl(41 100% 48%) 50%, hsl(43 100% 75%) 75%, hsl(45 100% 51%) 100%);
+    --gradient-silver: linear-gradient(135deg, hsl(0 0% 75%) 0%, hsl(0 0% 85%) 25%, hsl(0 0% 70%) 50%, hsl(0 0% 90%) 75%, hsl(0 0% 75%) 100%);
 
     /* Shadows */
     --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.3);
@@ -154,6 +158,18 @@ All colors MUST be HSL.
   
   .animate-scale-in {
     animation: scale-in 0.4s ease-out;
+  }
+  
+  .gold-frame {
+    background: var(--gradient-gold);
+    padding: 3px;
+    border-radius: 0.75rem;
+  }
+  
+  .silver-frame {
+    background: var(--gradient-silver);
+    padding: 3px;
+    border-radius: 0.75rem;
   }
 }
 
