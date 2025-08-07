@@ -1,4 +1,4 @@
-import { ExternalLink, Plane, Users, Edit3, Globe, Shield } from "lucide-react";
+import { ExternalLink, Plane, Users, Edit3, Globe, Shield, Truck } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -48,6 +48,15 @@ const Portfolio = () => {
       category: "Technology",
       color: "text-orange-500",
       bgColor: "bg-orange-500/20"
+    },
+    {
+      name: "Ciptabumi Cargo",
+      url: "cargo.ciptabumi.com",
+      icon: Truck,
+      description: "Sistem cargo dan logistik terintegrasi yang menghubungkan freight forwarder, ekspedisi, dan perusahaan logistik dalam satu platform digital terdepan.",
+      category: "Logistics",
+      color: "text-cyan-500",
+      bgColor: "bg-cyan-500/20"
     }
   ];
 
@@ -113,7 +122,7 @@ const Portfolio = () => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-1">5</div>
+                <div className="text-2xl font-bold text-primary mb-1">6</div>
                 <div className="text-sm text-muted-foreground">Platform</div>
               </div>
               <div className="text-center">

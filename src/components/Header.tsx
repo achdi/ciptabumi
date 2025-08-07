@@ -13,6 +13,7 @@ const Header = () => {
     { name: t('nav.home'), href: "#home" },
     { name: t('nav.about'), href: "#about" },
     { name: t('nav.portfolio'), href: "#portfolio" },
+    { name: t('nav.investor'), href: "/investor" },
     { name: t('nav.contact'), href: "#contact" },
   ];
 
@@ -39,6 +40,12 @@ const Header = () => {
                 key={item.name}
                 href={item.href}
                 className="text-foreground hover:text-primary transition-colors duration-200 relative group"
+                onClick={(e) => {
+                  if (item.href.startsWith('/')) {
+                    e.preventDefault();
+                    window.location.href = item.href;
+                  }
+                }}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
@@ -72,7 +79,13 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   className="text-foreground hover:text-primary transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    setIsMenuOpen(false);
+                    if (item.href.startsWith('/')) {
+                      e.preventDefault();
+                      window.location.href = item.href;
+                    }
+                  }}
                 >
                   {item.name}
                 </a>
