@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import companyLogo from "@/assets/company-logo.png";
-
+import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
   const navItems = [
     { name: t('nav.home'), href: "#home" },
@@ -35,22 +36,52 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 relative group"
-                onClick={(e) => {
-                  if (item.href.startsWith('/')) {
-                    e.preventDefault();
-                    window.location.href = item.href;
-                  }
-                }}
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+            {navItems.map((item) => {
+              if (item.href.startsWith("/")) {
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="text-foreground hover:text-primary transition-colors duration-200 relative group"
+                  >
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                );
+              }
+              if (item.href.startsWith("#")) {
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-foreground hover:text-primary transition-colors duration-200 relative group"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const targetId = item.href.slice(1);
+                      const scrollToTarget = () => {
+                        const el = document.getElementById(targetId);
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      };
+                      navigate('/');
+                      setTimeout(scrollToTarget, 100);
+                    }}
+                  >
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
+                  </a>
+                );
+              }
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-foreground hover:text-primary transition-colors duration-200 relative group"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              );
+            })}
             <LanguageToggle />
           </nav>
 
@@ -74,22 +105,52 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 animate-fade-up">
             <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200"
-                  onClick={(e) => {
-                    setIsMenuOpen(false);
-                    if (item.href.startsWith('/')) {
-                      e.preventDefault();
-                      window.location.href = item.href;
-                    }
-                  }}
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navItems.map((item) => {
+                if (item.href.startsWith("/")) {
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="text-foreground hover:text-primary transition-colors duration-200"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                }
+                if (item.href.startsWith("#")) {
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="text-foreground hover:text-primary transition-colors duration-200"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsMenuOpen(false);
+                        const targetId = item.href.slice(1);
+                        const scrollToTarget = () => {
+                          const el = document.getElementById(targetId);
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        };
+                        navigate('/');
+                        setTimeout(scrollToTarget, 100);
+                      }}
+                    >
+                      {item.name}
+                    </a>
+                  );
+                }
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-foreground hover:text-primary transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                );
+              })}
             </nav>
           </div>
         )}

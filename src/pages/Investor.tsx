@@ -8,10 +8,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
 import companyLogo from "@/assets/company-logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Investor = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -53,7 +55,7 @@ const Investor = () => {
               <Button 
                 variant="ghost" 
                 size="sm"
-                onClick={() => window.location.href = '/'}
+                onClick={() => navigate('/')}
                 className="mr-2"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
@@ -106,57 +108,6 @@ const Investor = () => {
         </div>
       </section>
 
-      {/* Investment Highlights */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient">{t('investor.highlights.title')}</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              {t('investor.highlights.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="card-gradient border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-scale-in">
-              <CardHeader>
-                <div className="p-3 rounded-full bg-primary/20 w-fit mb-4">
-                  <TrendingUp className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">{t('investor.growth.title')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{t('investor.growth.desc')}</p>
-              </CardContent>
-            </Card>
-
-            <Card className="card-gradient border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-scale-in" style={{ animationDelay: '0.1s' }}>
-              <CardHeader>
-                <div className="p-3 rounded-full bg-accent/20 w-fit mb-4">
-                  <Globe className="h-6 w-6 text-accent" />
-                </div>
-                <CardTitle className="text-xl">{t('investor.market.title')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{t('investor.market.desc')}</p>
-              </CardContent>
-            </Card>
-
-            <Card className="card-gradient border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-              <CardHeader>
-                <div className="p-3 rounded-full bg-success/20 w-fit mb-4">
-                  <Award className="h-6 w-6 text-success" />
-                </div>
-                <CardTitle className="text-xl">{t('investor.innovation.title')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{t('investor.innovation.desc')}</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Investment Opportunity */}
       <section className="py-20 bg-muted/30">
@@ -262,7 +213,7 @@ const Investor = () => {
         </div>
       </section>
 
-      {/* Company Flipbook */}
+      {/* Interactive Digital Portfolio */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -289,7 +240,7 @@ const Investor = () => {
                     <iframe
                       src="https://online.fliphtml5.com/yhwoi/fnec/"
                       className="w-full h-full border-0"
-                      title="Company Portfolio Flipbook"
+                      title="Interactive Digital Portfolio"
                       allowFullScreen
                     />
                   </div>
@@ -309,6 +260,59 @@ const Investor = () => {
           </div>
         </div>
       </section>
+
+      {/* Investment Highlights */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-gradient">{t('investor.highlights.title')}</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              {t('investor.highlights.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="card-gradient border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-scale-in">
+              <CardHeader>
+                <div className="p-3 rounded-full bg-primary/20 w-fit mb-4">
+                  <TrendingUp className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">{t('investor.growth.title')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">{t('investor.growth.desc')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="card-gradient border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-scale-in" style={{ animationDelay: '0.1s' }}>
+              <CardHeader>
+                <div className="p-3 rounded-full bg-accent/20 w-fit mb-4">
+                  <Globe className="h-6 w-6 text-accent" />
+                </div>
+                <CardTitle className="text-xl">{t('investor.market.title')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">{t('investor.market.desc')}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="card-gradient border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-scale-in" style={{ animationDelay: '0.2s' }}>
+              <CardHeader>
+                <div className="p-3 rounded-full bg-success/20 w-fit mb-4">
+                  <Award className="h-6 w-6 text-success" />
+                </div>
+                <CardTitle className="text-xl">{t('investor.innovation.title')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">{t('investor.innovation.desc')}</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
 
       {/* Contact Info */}
       <section className="py-20">
