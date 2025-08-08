@@ -7,13 +7,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
-import companyLogo from "@/assets/company-logo.png";
-import { useNavigate } from "react-router-dom";
+
+import Header from "@/components/Header";
 
 const Investor = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -47,32 +47,7 @@ const Investor = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-3">
-              <Button 
-                variant="ghost" 
-                size="sm"
-                onClick={() => navigate('/')}
-                className="mr-2"
-              >
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                {t('common.back')}
-              </Button>
-              <img 
-                src={companyLogo} 
-                alt="Ciptabumi Logo" 
-                className="h-10 w-10 rounded-lg"
-              />
-              <div className="text-xl font-bold text-gradient">
-                Ciptabumi Group
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-background to-muted/50">
