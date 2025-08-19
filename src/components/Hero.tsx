@@ -45,6 +45,10 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="primary-gradient hover:scale-105 transition-transform duration-300 glow-shadow group"
+              onClick={() => {
+                const portfolioSection = document.getElementById('portfolio');
+                portfolioSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               {t('hero.cta.portfolio')}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -54,6 +58,10 @@ const Hero = () => {
               variant="outline" 
               size="lg"
               className="border-primary/50 hover:bg-primary/10 hover:scale-105 transition-all duration-300"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                contactSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               {t('hero.cta.contact')}
             </Button>
